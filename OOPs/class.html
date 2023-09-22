@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1></h1>
+    
+
+
+
+    <script>
+
+        class Railway{
+
+            constructor(givenName , trainNo){
+                this.name = "Rahul";
+                console.log("constructor is called ", givenName , trainNo);
+            }
+
+            submit(){
+                alert("submitted");
+            }
+
+            cancel(){
+                alert("cancelled");
+            }
+
+            fillName(name){
+                this.name = name;
+                alert(`name is ${name}`);
+            }
+        }
+
+        let r = new Railway("Rahul" , "12345");
+        r.submit();
+        r.cancel();
+        r.fillName("Rahul");
+
+    </script>
+</body>
+</html>

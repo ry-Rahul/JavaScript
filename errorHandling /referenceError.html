@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      .container {
+        width: 100%;
+        height: 100vh;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom right, #08001f, #30197d);
+      }
+      h1 {
+
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Reference Error Types of error</h1>
+    </div>
+
+    <script>
+      try {
+            let age = prompt("Enter your age");
+            age = Number.parseInt(age);
+            if (age < 0 || age > 100) {
+            throw new ReferenceError("This is a invalid age");
+            return;
+            }
+
+            throw new ReferenceError("This is a reference error");
+
+
+
+
+      } catch (error) {
+            console.log(error.name);
+            console.log(error.message);
+            console.log(error.stack);
+      } finally {
+            console.log("Finally block is always executed");
+      }
+      console.log("Script is still running");
+    </script>
+  </body>
+</html>

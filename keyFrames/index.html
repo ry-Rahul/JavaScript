@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: teal;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 300px;
+        }
+
+        .container{
+            width: 300px;
+            height: 300px;
+            border: 2px solid white;
+            animation: orbit 3s linear infinite;
+
+
+            border-radius: 50%;
+        }
+        
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            animation-duration: 1s;
+            /*
+            transition: 1s ease;
+            animation-direction: alternate-reverse;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+            */
+
+            border-radius: 50%;
+        }
+
+        .loader{
+       
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dot{
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 0 10px;
+            animation: up-down 0.8s ease infinite alternate;
+        }
+        
+        .dot:nth-child(1){
+            animation-delay: 0s;
+        }
+        .dot:nth-child(2){
+            animation-delay: 0.1s;
+        }
+        .dot:nth-child(3){
+            animation-delay: 0.2s;
+        }
+        .dot:nth-child(4){
+            animation-delay: 0.3s;
+        }
+        @keyframes up-down{
+            from{
+                transform: translateY(-10px);
+            }
+            to{
+                transform: translateY(10px);
+            }
+        }
+
+        @keyframes orbit {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes slide-in {
+            0%{
+                transform: translateX(-700px);
+            }
+            100%{
+                transform: translateX(200px);
+            }
+        }
+
+
+        @keyframes circle{
+            0% ,100%{
+                transform: translate(0, 0);
+            }
+            25%{
+                transform: translate(200px, 0);
+            }
+            50%{
+                transform: translate(200px, 200px);
+            }
+            75%{
+                transform: translate(0, 200px);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="box"></div>
+    </div>
+
+    <div class="loader">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+</body>
+</html>

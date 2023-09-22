@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // hosting is a mechanism in which the js engine moves all the variable and function declaration to the top of the scope before executing the code
+
+        console.log(a); //print undefined because declaration is hoisted but not the initialization
+        var a =9; 
+
+        console.log(b);
+        let b = 9; //print error because let and const are not hoisted cannot access before initialization 
+
+        fun(); //print hello because function declaration is hoisted
+        function fun(){
+            console.log("hello");
+        }
+
+        //function expression and class expression are not hoisted
+    </script>
+</body>
+</html>

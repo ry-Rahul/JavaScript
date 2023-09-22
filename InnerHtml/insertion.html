@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    I am start of this container (outer)
+    <div class="container">
+        I am start of this container (inner)
+        <div class="first">I am a first element</div>
+        I am end of this container (outer)
+    </div>
+    I am end of this container (inner)
+
+    <script>
+        let a = document.getElementsByTagName('div')[0];
+        /*
+        
+        */
+    
+        let div = document.createElement('div');
+        div.innerHTML = '<h1> Hello World </h1>';
+        //a.appendChild(div);
+        
+        // prepend is used to add element at the start of the container
+        //a.prepend(div);
+        
+        // insertBefore is used to add element before the element
+        //a.before(div);
+        
+        // insertAfter is used to add element after the element
+        //a.after(div);
+
+        a.replace(div);
+
+    </script>
+</body>
+</html>

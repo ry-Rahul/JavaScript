@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        class Employee{
+            
+            constructor(name){
+                this._name = name;
+            }
+
+            login(){
+                console.log(`${this._name} logged in`);
+            }
+
+            get name(){
+                return this._name;
+            }
+
+            set name(newName){
+                this._name = newName;
+            }
+        }
+
+        class Programmers extends Employee{
+            constructor(name){
+                super(name);
+            }
+
+            login(){
+                console.log(`${this._name} logged in as a programmer`);
+            }
+        }
+
+        let e = new Employee("rahul");
+        e.login();
+        console.log(e.name);
+
+        console.log(e instanceof Employee)  //true
+
+        let p = new Programmers("shubham");
+        console.log(p instanceof Employee)  //true
+    </script>
+</body>
+</html>

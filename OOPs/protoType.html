@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+
+    <script>
+        let a = {
+            name2: "rahul",
+            language: "javascript",
+
+            /*
+
+            if run method is defined here then it will be run 
+            when we call a.run() but if it is not define here then it will find in its prototype
+
+            */
+        }
+
+        let p = {
+            run: ()=>{
+                alert("running");
+            }
+        }
+
+        p.__proto__ = {
+               name:"Jackie",
+            }
+
+        a.__proto__ = p;
+        a.run();
+        console.log(a.name);
+
+
+    </script>
+</body>
+</html>

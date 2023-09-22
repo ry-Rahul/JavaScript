@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+
+        class Employee{
+            login(){
+                console.log("Employee login");
+            }
+
+            logout(){
+                console.log("Employee logout");
+            }
+
+            requestLeave(x){
+                console.log(`Employee requested for ${x} days leave`);
+            }
+        }
+
+        class Programmers extends Employee{
+            requestCoffee(x){
+                console.log(`Programmer requested for ${x} cups of coffee`);
+            }
+
+            requestLeave(x){
+
+                super.requestLeave(x+1);
+                //console.log(`Programmer requested for ${x+1} days leave (one day extra)`);
+            }
+        }
+
+
+        let e = new Programmers();
+        e.login();
+        e.requestLeave(2);
+    </script>
+</body>
+</html>

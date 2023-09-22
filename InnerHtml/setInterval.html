@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+        alert("Hello World");
+
+        const sum = (a, b, c) => {
+            console.log("Yes I am running "+( a + b + c));
+        }
+
+        setTimeout(sum, 2000, 2, 3, 4);
+
+
+        let a = setTimeout(() => {
+            alert("this is a timeout function");
+        }, 5000);
+
+        let b = prompt("do you want to run the settimout function");
+        if(b == "yes"){
+            clearTimeout(a);
+        }
+    
+
+        // clearTimeout(a);
+
+
+        setInterval(() => {
+            console.log("this is a setInterval function");
+        }, 2000);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+
+        const sayHello = (name,greeting) =>console.log(`${greeting} ${name}`);
+
+        sayHello("Rahul","Good Morning");
+
+        const x = {
+            name:"Rahul",
+            age:21,
+            experience:8,
+            greet: function(){
+
+                //This print the Object x
+                console.log(this);
+                let that = this;
+
+                setTimeout(function(){
+
+                    //This print the window object
+                    console.log(this);
+
+                    //but in case of arrow function it print the object x
+                    console.log(`Name is ${that.name}`);
+                }, 2000);
+
+            }
+        }
+
+        x.greet();
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+
+        //A closure is a feature of JavaScript that allows inner functions to access the outer scope of a function. Closure helps in binding a function to its outer boundary and is created automatically whenever a function is created. A block is also treated as a scope since ES6. 
+        //return a function with its lexical environment
+
+        //closure is a function with its lexical environment (scope chain) intact
+
+        message = "Good Morning";
+        function hello1(){
+            let message = "Good Evening";
+
+            console.log("hello1 "+message);
+
+            let c = function hello2(){
+                console.log("hello2 "+message);
+            }
+
+            //return last reference of function
+            message = "Good Night";
+            return c;
+        }
+
+        let a = hello1();
+        a();
+
+    </script>
+</body>
+</html>

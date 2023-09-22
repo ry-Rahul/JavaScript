@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+    <script>
+
+        console.log('This is callback function');
+
+        //callback function
+        function loadScript(src, callback){
+
+            let script = document.createElement('script');
+            script.src = src;
+
+            script.onload = function(){
+                alert(`Script ${src} loaded`);
+                callback(null,src);
+            };
+
+            script.onerror = function(){
+                //alert(`Error: ${src} not loaded`);
+                console.log(`Error: ${src} not loaded`);
+                callback(new Error(`Script ${src} not loaded`));
+            };
+
+            callback(src);
+            document.body.appendChild(script);
+
+        }
+
+       //callback function
+        function hello(error, src){
+            if(error){
+                console.log(error);
+                return;
+            }
+            alert('Hello World'+ src);
+        }
+
+        // pass the function as a argument to another function 
+        loadScript("https://cdn.jsdelivr.net/n pm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js",hello);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    
+</body>
+</html>

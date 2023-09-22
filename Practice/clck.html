@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        *{
+           
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .hero{
+            height: 100vh;
+            width: 100%;
+            background: linear-gradient(to bottom right, #08001f, #30197d);
+            position : relative;
+
+        }
+        .container{
+            height: 180px;
+            width: 800px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color : #fff;
+        }
+        .clock{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            background: rgba(235, 0, 255, 0.11);
+            backdrop-filter: blur(40px);
+        }
+
+        .container::before{
+            content:"";
+            height: 180px;
+            width: 180px;
+            background: #f41b75;
+            border-radius: 5px;
+            position : absolute;
+            left: -50px;
+            top: -40px;
+            z-index: -1;
+        }
+
+        .container::after{
+            content:"";
+            height: 180px;
+            width: 180px;
+            background: #311bf4;
+            border-radius: 50%;
+            position : absolute;
+            right: -50px;
+            bottom: -40px;
+            z-index: -1;
+        }
+
+        .clock span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px;
+            font-weight: 700;
+
+            width: 110px;
+
+        }
+
+        .clock span::after{
+            content: "";
+            height: 10px;
+            width: 10px;
+
+            border-radius: 50%;
+            margin-left: 5px;
+            animation: circle 1s linear infinite;
+        }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="container">
+        <div class="clock">
+            <span id="hrs">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+        let hrs = document.getElementById("hrs");
+        let min = document.getElementById("min");
+        let sec = document.getElementById("sec");
+
+        setInterval(() => {
+            let date = new Date();
+            let hours = date.getHours();
+            let mins = date.getMinutes();
+            let secs = date.getSeconds();
+
+            hrs.innerHTML = (hours<10 ? "0":"")+hours;
+            min.innerHTML = (mins<10 ? "0":"")+mins;
+            sec.innerHTML = (secs<10 ? "0":"")+secs;
+
+        }, 1000);
+    </script>
+  </body>
+</html>

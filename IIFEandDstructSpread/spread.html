@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+
+        let arr = [1,2,3,4,5,6,7,8,9,10];
+        //let [a,b,c,...rest] = arr;
+        let [a,,,...rest] = arr;
+        console.log(a,rest);
+
+        //Destructuring in Objects
+        let {name,age} = {name:"Rahul",age:20};
+        console.log(name,age);
+
+
+        //Spread operator
+        let arr1 = [1,2,3,4,5];
+
+        //key value pairs
+        let obj1 = {...arr1};
+        console.log(obj1);
+        let arr2 = [6,7,8,9,10];
+        let arr3 = [...arr1,...arr2];
+        console.log(arr3);
+
+
+        let obj2 = {
+            name : "Rahul",
+            age : 20,
+            company: "Google",
+            address:"Noida Up",
+        };
+
+        //Override in this case
+        console.log({...obj2, name:"Rahul yadav"});
+
+        //but override in that case is not possible
+        console.log({ name:"Rahul yadav",address:"Delhi", ...obj2});
+
+    </script>
+</body>
+</html>

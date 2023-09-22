@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      .bulb-container {
+        height: 341px;
+        width: 341px;
+        transition: all 0.5s ease-in-out;
+        border-radius: 50%;
+        margin-top: 20px;
+        background-color: #4169e1;
+        rotate: 145deg;
+      }
+
+      
+      .bulb {
+        height: 341px;
+        width: 341px;
+        background: steelblue;
+        border-radius: 35%;
+        transition: all 1s ease-in-out;
+        rotate: 45deg;
+      }
+      .ctn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="alert('pay for burger')">burger</button>
+    <button onclick="alert('pay for pizza')">pizza</button>
+    <button onclick="alert('pay for Pow')">Pow</button>
+
+    <h1>Bookmarks</h1>
+    <a href="https://google.com" target="_blank"><button>google</button></a>
+    <a target="_blank"> <button id="fb">FaceBook</button> </a>
+
+    <!-- ______________________________bubl__________________________________________ -->
+    <div class="ctn"><div id="bulb" class="bulb bulb-container"></div></div>
+    <script>
+      let a = document
+        .getElementById("fb")
+        .addEventListener("click", function (e) {
+          // let url = "https://facebook.com";
+          let win = window.open("https://facebook.com", "_blank");
+          console.log(e);
+
+          //window.location = "https://facebook.com";
+          //win.focus();
+        });
+
+      //________________________________ B U L B
+      setInterval(async function () {
+        document.querySelector("#bulb").classList.toggle("bulb");
+        console.log("abc");
+      }, 1500);
+    </script>
+  </body>
+</html>

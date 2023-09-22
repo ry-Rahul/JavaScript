@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Promise.all()</h1>
+    
+
+    <script>
+        let p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                //resolve('resolve p1');
+                reject('reject p1');
+            }, 1000);
+        });
+
+        let p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('resolve p2');
+            }, 2000);
+        });
+
+        let p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve('resolve p3');
+            }, 3000);
+        });
+
+        p1.then((value) => {
+            console.log(value);
+        })
+
+
+        
+
+
+        // let promise_all = Promise.all([p1, p2, p3]);
+
+        //if one element is rejected then all are rejected
+
+        //allSettled() is used to get all the values even if one is rejected
+         //let promise_all = Promise.allSettled([p1, p2, p3]);
+
+         //any() is used to get the first resolved value
+        let promise_all = Promise.any([p1, p2, p3]);
+
+         promise_all.then((values) => {
+            console.log(values);
+        })
+
+    </script>
+</body>
+</html>

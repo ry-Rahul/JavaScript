@@ -1,0 +1,4 @@
+node_modules/
+projects/pdfMerger/uploads/
+.DS_Store
+**/**.pdf

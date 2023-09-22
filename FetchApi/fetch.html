@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background: black;
+        color: rgb(254, 255, 254);
+    }
+
+    h1 {
+        text-align: center;
+        margin: 20px 0;
+
+
+        position: sticky;
+        top: 0;
+        background-color: black;
+        z-index: 10;
+    }
+
+    #list {
+        width: 80%;
+        margin: 0 auto;
+        text-align: justify;
+        color: green;
+
+    }
+</style>
+
+
+<body>
+    <h1>Aaj ki subah kuchh Masaledar News ke sath</h1>
+    <ol id="list" type="1"></ol>
+</body>
+
+<script>
+    let p = fetch(
+        "https://newsapi.org/v2/everything?q=bitcoin&apiKey=d07bed6db89846b998890ec2c03b0384"
+    )
+        .then((value1) => {
+            console.log("Fetching data");
+            console.log(value1.status);
+            console.log(value1.ok);
+            return value1.json();
+        })
+        .then((value2) => {
+            console.log(value2);
+            var titles = value2.articles.map((item) => {
+                return item.title;
+            });
+            let content = document.getElementById("list");
+            // append li to ol
+            titles.forEach((item) => {
+                let li = document.createElement("li");
+                li.innerText = item;
+                //setInterval(() => {
+                content.appendChild(li);
+                //}, 10);
+            });
+        });
+
+    //show them on the page
+</script>
+
+</html>

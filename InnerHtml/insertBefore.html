@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="first"  class="hey">Hey I am First</div>
+
+
+
+
+    <script>
+        first.insertAdjacentHTML('beforebegin', '<div>Hey I am Before Begin</div>');
+        first.insertAdjacentHTML('afterbegin', '<div>Hey I am After Begin</div>');
+        first.insertAdjacentHTML('beforeend', '<div>Hey I am Before End</div>');
+        first.insertAdjacentHTML('afterend', '<div>Hey I am After End</div>');
+
+
+        //first.remove();
+
+        first.classList.add('hey');
+        first.classList.remove('hey');
+        first.classList.toggle('hey');
+        first.classList.contains('hey');
+        first.classList.replace('hey', 'hello');
+    </script>
+</body>
+</html>

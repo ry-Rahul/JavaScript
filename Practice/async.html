@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+        // question no 1 create a loadScript function which loads a script from a given url and returns a promise which resolves when the script is loaded and rejects when the script fails to load
+      const loadScript = async (src) => {
+        return new Promise((resolve, reject) => {
+          let script = document.createElement("script");
+          script.src = src;
+
+          script.onload = () => {
+            resolve(src + " Script Loaded");
+          };
+
+          script.onerror = () => {
+            reject("Error Occured");
+          };
+
+          document.head.append(script);
+        });
+      };
+
+      // using then() catch() Promises
+      let p1 = loadScript(
+        "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"
+      );
+      p1.then((value) => {
+        console.log(value);
+      }).catch((error) => {
+        console.log(error);
+      });
+
+      // using async await Promises
+      const main2 = async () => {
+        let a = await loadScript(
+          "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js"
+        );
+        console.log(a);
+      };
+
+      main2();
+
+      // question no 3 Create a promise which rejets after 3 seconds use an async await to get its value use try catch to resolve it
+
+      let p = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            reject("Rejected after 3 sec");
+          }, 3000);
+        });
+      };
+
+      let a = async () => {
+        try {
+          let b = await p();
+          console.log(b);
+        } catch (e) {
+          console.log(e);
+        }
+      };
+
+      a();
+
+
+      // question no 4 
+      console.log("Question no 4");
+      let pr1 = async () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(10);
+          }, 1000);
+        });
+      };
+
+      let pr2 = async () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(20);
+          }, 2000);
+        });
+      };
+
+
+      let pr3 = async () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(30);
+          }, 3000);
+        });
+      };
+
+      const run = async () => {
+
+        console.time('Time Taken');
+
+        /*
+        let a = await pr1();
+        let b = await pr2();
+        let c = await pr3();
+        console.log(a,b,c);
+        */
+
+        let a =  pr1();
+        let b =  pr2();
+        let c =  pr3();
+
+        let abc = await Promise.all([a,b,c]);
+        console.log(abc);
+
+        console.timeEnd('Time Taken');
+      };
+
+        run();
+    </script>
+  </body>
+</html>

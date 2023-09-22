@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      ul {
+        margin: 0%;
+        display: flex;
+        justify-content: start;
+        background-color: gray;
+      }
+
+      ul li {
+        list-style: none;
+        margin: 0 10px;
+      }
+
+        ul li:first-child {
+            color: red;
+        }
+
+        ul li:last-child {
+            color: green;
+        }
+
+        ul li:nth-child(2) {
+            color: rgb(13, 0, 255);
+        }
+
+        
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>About us</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+
+    <script>
+      document.getElementsByTagName("ul")[0].firstElementChild.style.color =
+        "red";
+      document.getElementsByTagName("ul")[0].lastElementChild.style.color =
+        "green";
+
+      //change backgroud color of all li
+      let li = Array.from(document.getElementsByTagName("li"));
+      li.forEach((element) => {
+        element.style.backgroundColor = "yellow";
+      });
+    </script>
+  </body>
+</html>
